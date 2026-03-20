@@ -34,6 +34,47 @@ struct ProgramSettings {
 };
 
 /**
+ * \class MissingArgument
+ * \brief Exception object for missing command-line arguments
+ *
+ */
+class MissingArgument : public std::invalid_argument {
+  public:
+    /**
+     * \brief Construct a MissingArgument exception
+     * \param err_message the diagnostic message
+     */
+    MissingArgument(const std::string& err_message) : std::invalid_argument(err_message) {}
+};
+
+class InvalidArgument : public std::invalid_argument {
+  public:
+    /**
+     * \brief Construct an InvalidArgument exception
+     * \param err_message the diagnostic message
+     */
+    InvalidArgument(const std::string& err_message) : std::invalid_argument(err_message) {}
+};
+
+class UnknownArgument : public std::invalid_argument {
+  public:
+    /**
+     * \brief Construct an UnknownArgument exception
+     * \param err_message the diagnostic message
+     */
+    UnknownArgument(const std::string& err_message) : std::invalid_argument(err_message) {}
+};
+
+class ConflictingArgument : public std::invalid_argument {
+  public:
+    /**
+     * \brief Construct a ConflictingArgument exception
+     * \param err_message the diagnostic message
+     */
+    ConflictingArgument(const std::string& err_message) : std::invalid_argument(err_message) {}
+};
+
+/**
  * \brief Processes the command-line arguments and modifies accordingly the program settings
  *
  * \param cmdLineArgs The command-line arguments to be processed
