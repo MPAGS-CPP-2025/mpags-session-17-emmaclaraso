@@ -55,4 +55,17 @@ class Cipher {
     virtual ~Cipher() = default;
 };
 
+/**
+ * \class BadKey
+ * \brief Exception for invalid keys 
+ */
+class BadKey : public std::invalid_argument {
+  public:
+    /**
+     * \brief BadKey exception
+     * \param err_message the error message
+     */
+    BadKey(const std::string& err_message) : std::invalid_argument(err_message) {}
+};
+
 #endif
